@@ -7,7 +7,7 @@ class Person {
 
   // Define the greet method
   greet() {
-    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
   }
 }
 
@@ -25,11 +25,15 @@ class Employee extends Person {
   }
 }
 
+// Attach classes to the window for Cypress testing
+window.Person = Person;
+window.Employee = Employee;
+
 // Test Case Example
 
 // Create an instance of Person
 const person = new Person("Alice", 25);
-person.greet();  // Output: Hello, my name is Alice, I am 25 years old.
+person.greet();  // Output: Hello, my name is Alice and I am 25 years old.
 
 // Create an instance of Employee
 const employee = new Employee("Bob", 30, "Manager");
